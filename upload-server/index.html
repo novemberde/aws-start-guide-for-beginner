@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AWS Start Guide</title>
+  <style>
+    body {
+      background-color: coral;
+      text-align: center;
+      position: relative;
+    }
+    div {
+      position: absolute;
+      top: 0; bottom: 0; left:0; right:0;
+      margin: auto; 
+      height: 100%;
+    }
+    h1 {
+      font-size: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>{{msg}}</h1>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <script>
+  const msg = "AWS Start Guide!";
+  new Vue({
+    el: '#app',
+    data: {
+      msg: ""
+    },
+    created: function () {
+      let i = 0;
+
+      setInterval(() => {
+        i++;
+        this.msg = msg.slice(0, i%(msg.length+3));
+      }, 400);
+    }
+  });
+  </script>
+</body>
+</html>

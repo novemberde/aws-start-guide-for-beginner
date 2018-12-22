@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AWS Start Guide</title>
+  <style>
+    body {
+      background-color: coral;
+      text-align: center;
+      position: relative;
+    }
+
+    div {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 100%;
+    }
+
+    button {
+      /* font-size: 200px; */
+      /* background-color: coral; */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <form action="/upload" method="POST" encType="multipart/form-data">
+      <input type='file' name="image"/>
+      <button type='submit'>{{msg}}</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        msg: "Upload"
+      },
+      created: function () {
+      }
+    });
+  </script>
+</body>
+
+</html>
