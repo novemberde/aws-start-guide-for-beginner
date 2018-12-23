@@ -188,8 +188,92 @@ $ npm install
 $ node app.js
 ```
 
+서버가 실행하는 것을 확인한 후에 브라우저를 열어 해당 페이지에 접근합니다.
+
+EC2_PUBLIC_DNS_URL:8080 으로 접속하시면 됩니다.
+
 ## Elastic Beanstalk에 Node.js 서버 올려보기
 
 ## EC2에 이미지 업로드 서버 만들기
 
-## Aurora MySQL과 Node.js 서버 연동하기
+## Aurora MySQL과 Node.js 서버 연동해보기
+
+### 데이터베이스 생성하기
+
+[RDS 콘솔](https://ap-northeast-2.console.aws.amazon.com/rds/home)로 이동하여 데이터베이스 생성 버튼을 누릅니다.
+
+Aurora를 생성합니다. Free Tier 영역이 아니니 과금될 수 있습니다.
+과금을 피하고 싶으신 분들은 RDS MySQL로 생성합니다.
+
+![aurora-1](/images/aurora-1.png)
+
+---
+
+다음과 같이 설정합니다.
+
+- Capacity type: Provisioned
+- DB 엔진 버전: Aurora 5.7.12
+- DB 인스턴스 클래스: db.t2.small
+- DB 인스턴스 식별자: YjdInstance
+- 마스터 사용자 이름: yjd_master
+- 마스터 암호: pwd12341234
+
+![aurora-2](/images/aurora-2.png)
+
+---
+
+고급설정은 대부분 기본값으로 두고 
+두가지 설정만 합니다.
+
+- 데이터베이스 이름: db
+- 삭제방지 활성화 옵션 제거
+
+다음과 같이 진행해야 실습에 무리가 없습니다.
+이번 실습을 마치고 빠르게 삭제해야 과금 문제를 피할 수 있습니다.
+
+---
+
+이전에 생성한 EC2는 데이터 베이스에 대한 접근 권한을 가지고 있지 않습니다.
+데이터베이스에 접근 가능하도록 설정합니다.
+
+생성한 후 아래와 같은 화면에서 설정된 보안그룹을 클릭합니다.
+
+![aurora-3](/images/aurora-3.png)
+
+---
+
+다음과 같이 인바운드 규칙을 추가합니다.
+사용자 지정 인풋에 'YjdEC2SG'를 입력하면 EC2를 생성할 때
+만든 Security Group이 나타나는데, 이를 선택해주시면 됩니다.
+
+- TCP 3306
+- 사용자 지정: YjdEC2SG
+
+![aurora-4](/images/aurora-4.png)
+
+---
+
+다음과 같은 화면에서 쓰기의 엔드포인트 부분을 복사합니다.
+
+![aurora-5](/images/aurora-5.png)
+
+---
+
+EC2로 다시 접속하여 다음과 같이 입력하고 DB와의 접속이 일어나는지 확인합니다.
+AURORA_WRITE_ENDPOINT로 방금 복사한 엔드포인트 값을 넣어줍니다.
+
+```sh
+$ export AURORA_MYSQL_HOST=AURORA_WRITE_ENDPOINT
+$ cd ~/aws-start-guide-for-beginner/aurora-server
+$ npm install
+$ node app.js
+
+Server is running at 8080
+Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER auto_increment , `username` VARCHAR(255), `birthday` DATETIME, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `users`
+```
+
+## Elastic Beanstalk에 Node.js 서버 올려보기
+
+
+## Route53으로 도메인 관리하기
