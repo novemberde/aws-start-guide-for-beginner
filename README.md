@@ -192,8 +192,6 @@ $ node app.js
 
 EC2_PUBLIC_DNS_URL:8080 으로 접속하시면 됩니다.
 
-## Elastic Beanstalk에 Node.js 서버 올려보기
-
 ## EC2에 이미지 업로드 서버 만들기
 
 ## Aurora MySQL과 Node.js 서버 연동해보기
@@ -275,5 +273,38 @@ Executing (default): SHOW INDEX FROM `users`
 
 ## Elastic Beanstalk에 Node.js 서버 올려보기
 
+[Elastic Beanstalk 콘솔](https://ap-northeast-2.console.aws.amazon.com/elasticbeanstalk/home)로 이동합니다.
+
+다음과 같이 입력하고 생성합니다.
+
+- 어플리케이션 이름: YjdEB
+- 플랫폼: Node.js
+- 어플리케이션 코드: 샘플어플리케이션
+
+![eb-1](/images/eb-1.png)
+
+---
+
+생성을 완료하면 다음과 같이 화면이 나타납니다.
+URL 부분을 복사하여 브라우저에 접속합니다.
+
+![eb-1](/images/eb-1.png)
+
+--
+
+<!-- 방금까지는 샘플코드로 배포된 앱이었습니다.
+
+내가 원하는 사이트로 다시 배포해봅니 -->
+
 
 ## Route53으로 도메인 관리하기
+
+
+## 리소스 삭제하기
+
+오늘 생성한 리소스는 다음과 같습니다.
+
+- RDS MySQL 또는 Aurora MySQL
+- EC2
+- Elastic Beanstalk
+- S3
