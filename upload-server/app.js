@@ -10,7 +10,7 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 
 AWS.config.region = "ap-northeast-2";
-const BUCKET_NAME = "yjd-image-novemberde"
+const BUCKET_NAME = process.env.BUCKET_NAME;
 
 const uploadS3 = ({
   buffer, path, mimetype
