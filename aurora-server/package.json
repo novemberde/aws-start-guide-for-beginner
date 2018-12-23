@@ -13,6 +13,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.42.0"
   }
 }
