@@ -9,26 +9,26 @@ Amazon Web Service에 대해서 처음 접해보는 사람도 따라서 웹서�
 3. EC2 소개
 4. EC2로 Ubuntu 시작하기
 5. Ubuntu에 Node.js 서버 올려보기
-6. Elastic Beanstalk 소개
-7. Elastic Beanstalk에 Node.js 서버 올려보기
+6. Load Balancer 소개
+7. ALB 구성하기
 8. S3란?
 9. EC2에 이미지 업로드 서버 만들기
 10. RDS란?
 11. Aurora MySQL과 Node.js 서버 연동하기
 12. 부록: Route53 으로 도메인 관리하기
 
-[PPT 보러가기](https://docs.google.com/presentation/d/1gqiWq_FblOs5xIScgKVDG3LHoMYucXjs4pk8qJ41L40/edit?usp=sharing)
+[PPT 보러가기](https://docs.google.com/presentation/d/1DhguMENk6OiSC-OObEswgsYChIAF_r6E9r07caMpdC8/edit?usp=sharing)
 
 ## IMPORTANT
 
-#### 과정을 진행하며 생성한 리소스는 모두 삭제하길 바랍니다. 비용이 청구될 수 있습니다.
+#### ⚠️과정을 진행하며 생성한 리소스는 모두 삭제하길 바랍니다. 비용이 청구될 수 있습니다.⚠️
 
 이번에 생성한 리소스들은 [EC2 콘솔](https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home)이나
-[ElasticBeanstalk 콘솔](https://ap-northeast-2.console.aws.amazon.com/elasticbeanstalk/home), 
+[ELB 콘솔](https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#LoadBalancers:),
 그리고 [RDS 콘솔](https://ap-northeast-2.console.aws.amazon.com/rds/home)에서 확인할 수 있습니다.
 
 혹시라도 생성버튼을 누른 기억이 있는데 여기 콘솔 리스트에 없다면 우측 상단의 리전을 바꾸어가며 확인 바랍니다.
-
+이외의 리소스(s3, target group, security group)는 과금이 되지 않을 예정이니 걱정하지 않으셔도 괜찮습니다.
 
 ## EC2로 Ubuntu 시작하기
 
