@@ -266,7 +266,7 @@ EC2로 다시 접속하여 다음과 같이 입력하고 DB와의 접속이 일�
 AURORA_WRITE_ENDPOINT로 방금 복사한 엔드포인트 값을 넣어줍니다.
 
 ```sh
-$ export AURORA_MYSQL_HOST=AURORA_WRITE_ENDPOINT
+$ export MYSQL_HOST=MYSQL_ENDPOINT
 $ cd ~/aws-start-guide-for-beginner/aurora-server
 $ npm install
 $ node app.js

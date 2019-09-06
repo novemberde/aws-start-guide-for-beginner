@@ -5,10 +5,10 @@ const port = process.env.PORT || 8080;
 const app = express();
 const Sequelize = require('sequelize');
 
-const AURORA_MYSQL_HOST = process.env.AURORA_MYSQL_HOST;
+const MYSQL_HOST = process.env.MYSQL_HOST;
 
 const sequelize = new Sequelize('db', 'yjd_master', 'pwd12341234', {
-  host: AURORA_MYSQL_HOST,
+  host: MYSQL_HOST,
   dialect: 'mysql',
   pool: {
     max: 5,
