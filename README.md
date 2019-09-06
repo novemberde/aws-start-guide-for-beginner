@@ -241,7 +241,7 @@ MySQL을 선택하고 MySQL 8.x.x 버전을 선택합니다.
 
 생성한 후 아래와 같은 화면에서 설정된 보안그룹을 클릭합니다.
 
-![aurora-3](/images/aurora-3.png)
+![rds-mysql-3](/images/rds-mysql-5.png)
 
 ---
 
@@ -256,9 +256,9 @@ MySQL을 선택하고 MySQL 8.x.x 버전을 선택합니다.
 
 ---
 
-다음과 같은 화면에서 쓰기의 엔드포인트 부분을 복사합니다.
+다음과 같은 화면에서 엔드포인트 부분을 복사합니다.
 
-![aurora-5](/images/aurora-5.png)
+![rds-mysql-5](/images/rds-mysql-6.png)
 
 ---
 
