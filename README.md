@@ -194,40 +194,45 @@ EC2_PUBLIC_DNS_URL:8080 으로 접속하시면 됩니다.
 
 ## EC2에 이미지 업로드 서버 만들기
 
-## Aurora MySQL과 Node.js 서버 연동해보기
+## RDS MySQL과 Node.js 서버 연동해보기
 
 ### 데이터베이스 생성하기
 
 [RDS 콘솔](https://ap-northeast-2.console.aws.amazon.com/rds/home)로 이동하여 데이터베이스 생성 버튼을 누릅니다.
 
-Aurora를 생성합니다. Free Tier 영역이 아니니 과금될 수 있습니다.
-과금을 피하고 싶으신 분들은 RDS MySQL로 생성합니다.
+MySQL을 선택하고 MySQL 8.x.x 버전을 선택합니다.
 
-![aurora-1](/images/aurora-1.png)
+![rds-1](/images/rds-mysql-1.png)
 
 ---
 
-다음과 같이 설정합니다.
+템플릿으로 프리티어를 선택하고 다음과 같이 설정합니다.
 
-- Capacity type: Provisioned
-- DB 엔진 버전: Aurora 5.7.12
-- DB 인스턴스 클래스: db.t2.small
 - DB 인스턴스 식별자: YjdInstance
 - 마스터 사용자 이름: yjd_master
 - 마스터 암호: pwd12341234
 
-![aurora-2](/images/aurora-2.png)
+![rds-mysql-2](/images/rds-mysql-2.png)
 
 ---
 
-고급설정은 대부분 기본값으로 두고 
-두가지 설정만 합니다.
+다음과 같이 퍼플릭 엑세스를 허용하고 VPC 보안 그룹을 새로 생성합니다.
+
+- 퍼플릭 엑세스 가능: 예
+- VPC 보안 그룹: 새로 생성
+- 새 VPC 보안 그룹 이름: YjdRdsSG
+- 데이터베이스 포트: 3306
+
+![rds-mysql-3](/images/rds-mysql-3.png)
+
+---
+
+추가 구성은 대부분 기본값으로 두고 
+한 가지 설정만 합니다.
 
 - 데이터베이스 이름: db
-- 삭제방지 활성화 옵션 제거
 
-다음과 같이 진행해야 실습에 무리가 없습니다.
-이번 실습을 마치고 빠르게 삭제해야 과금 문제를 피할 수 있습니다.
+![rds-mysql-4](/images/rds-mysql-4.png)
 
 ---
 
