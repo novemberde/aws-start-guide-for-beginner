@@ -276,40 +276,24 @@ Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER auto_incre
 Executing (default): SHOW INDEX FROM `users`
 ```
 
-## Elastic Beanstalk에 Node.js 서버 올려보기
+## ALB 올려보기
 
-[Elastic Beanstalk 콘솔](https://ap-northeast-2.console.aws.amazon.com/elasticbeanstalk/home)로 이동합니다.
+### 참고
 
-다음과 같이 입력하고 생성합니다.
-
-- 어플리케이션 이름: YjdEB
-- 플랫폼: Node.js
-- 어플리케이션 코드: 샘플어플리케이션
-
-![eb-1](/images/eb-1.png)
-
----
-
-생성을 완료하면 다음과 같이 화면이 나타납니다.
-URL 부분을 복사하여 브라우저에 접속합니다.
-
-![eb-1](/images/eb-1.png)
-
---
-
-<!-- 방금까지는 샘플코드로 배포된 앱이었습니다.
-
-내가 원하는 사이트로 다시 배포해봅니 -->
-
+- [Application Load Balancer 구성 요소](https://docs.aws.amazon.com/ko_kr/elasticloadbalancing/latest/application/introduction.html)
 
 ## Route53으로 도메인 관리하기
 
+### 참고
+
+- [Amazon Route 53란 무엇입니까?](https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/Welcome.html)
 
 ## 리소스 삭제하기
 
-오늘 생성한 리소스는 다음과 같습니다.
+오늘 생성한 리소스는 다음과 같습니다. 직접 콘솔로 들어가서 삭제하여 주세요.
 
-- RDS MySQL 또는 Aurora MySQL
-- EC2
-- Elastic Beanstalk
-- S3
+- [RDS MySQL](https://ap-northeast-2.console.aws.amazon.com/rds/home?region=ap-northeast-2)
+- [EC2](https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#Instances:sort=instanceId)
+- [ALB](https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#LoadBalancers:sort=loadBalancerName)
+- [Target Group](https://ap-northeast-2.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-2#TargetGroups:sort=targetGroupName)
+- [S3](https://console.aws.amazon.com/s3/home?region=ap-northeast-2)
