@@ -296,6 +296,8 @@ Executing (default): SHOW INDEX FROM `users`
 
 ## Route53으로 도메인 관리하기
 
+## ACM으로 인증서 발급하기
+
 ### 참고
 
 - [Amazon Route 53란 무엇입니까?](https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/Welcome.html)
