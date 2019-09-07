@@ -194,6 +194,13 @@ EC2_PUBLIC_DNS_URL:8080 으로 접속하시면 됩니다.
 
 ## EC2에 이미지 업로드 서버 만들기
 
+```sh
+$ cd ~/aws-start-guide-for-beginner/upload-server
+$ npm install
+$ export BUCKET_NAME=BUCKET_NAME_ON_S3
+$ node app.js
+```
+
 ## RDS MySQL과 Node.js 서버 연동해보기
 
 ### 데이터베이스 생성하기
