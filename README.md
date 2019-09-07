@@ -201,6 +201,11 @@ $ export BUCKET_NAME=BUCKET_NAME_ON_S3
 $ node app.js
 ```
 
+### AWS IAM Role과 User의 차이
+
+- [AWS IAM Role](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles.html): AWS내에서 Resource 간에 접근하기 위해 사용함
+- [AWS IAM User](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_users.html): 외부에서 AWS에 접근하기 위해 사용함
+
 ## RDS MySQL과 Node.js 서버 연동해보기
 
 ### 데이터베이스 생성하기
